@@ -1880,6 +1880,9 @@ void Document::updateStyle()
             documentElement->recalcStyle(NoChange);
     }
 
+    if (RuntimeEnabledFeatures::layoutNextGenerationEnabled())
+        layoutView()->replaceDescendantsWithNGRootsIfPossible();
+
     view()->recalcOverflowAfterStyleChange();
     view()->setFrameTimingRequestsDirty(true);
 

@@ -228,6 +228,8 @@ public:
 
     bool avoidsFloats() const override;
 
+    bool replaceDescendantsWithNGRootsIfPossible(bool parentIsEligable = false);
+
     using LayoutBoxModelObject::moveChildrenTo;
     void moveChildrenTo(LayoutBoxModelObject* toBoxModelObject, LayoutObject* startChild, LayoutObject* endChild, LayoutObject* beforeChild, bool fullRemoveInsert = false) override;
 
@@ -358,6 +360,8 @@ private:
     LayoutUnit adjustLogicalLeftOffsetForLine(LayoutUnit offsetFromFloats, IndentTextOrNot applyTextIndent) const;
 
     virtual RootInlineBox* createRootInlineBox(); // Subclassed by SVG
+
+    bool canReplaceWithNGRoot() const;
 
     bool isPagedOverflow(const ComputedStyle&);
 

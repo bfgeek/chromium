@@ -106,6 +106,7 @@ IterableCollections status=experimental
 KeyboardEventCode status=stable
 KeyboardEventKey status=experimental
 LangAttributeAwareFormControlUI
+LayoutNextGeneration status=stable
 LinkPreconnect status=stable
 LinkPreload status=stable
 LinkHeader status=stable

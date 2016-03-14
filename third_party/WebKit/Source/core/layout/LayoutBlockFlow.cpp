@@ -2776,6 +2776,21 @@ RootInlineBox* LayoutBlockFlow::createRootInlineBox()
     return new RootInlineBox(LineLayoutItem(this));
 }
 
+bool LayoutBlockFlow::canReplaceWithNGRoot() const
+{
+    return false;
+}
+
+bool LayoutBlockFlow::replaceDescendantsWithNGRootsIfPossible(bool parentIsEligable)
+{
+    // Skip all inline sub-trees for now, though we shouldn't have to.
+    if (childrenInline())
+        return false;
+
+    bool couldBeNGRoot = canReplaceWithNGRoot();
+    // for ()
+}
+
 bool LayoutBlockFlow::isPagedOverflow(const ComputedStyle& style)
 {
     return style.isOverflowPaged() && node() != document().viewportDefiningElement();

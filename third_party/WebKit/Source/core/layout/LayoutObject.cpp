@@ -201,6 +201,7 @@ LayoutObject* LayoutObject::createObject(Element* element, const ComputedStyle& 
         return new LayoutInline(element);
     case BLOCK:
     case INLINE_BLOCK:
+        // TODO(leviw): Support LayoutNGPlaceholder.
         return new LayoutBlockFlow(element);
     case LIST_ITEM:
         return new LayoutListItem(element);

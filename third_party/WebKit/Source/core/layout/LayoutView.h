@@ -214,6 +214,8 @@ public:
     // or PaintLayerScrollableArea handle the scroll.
     ScrollResult scroll(ScrollGranularity, const FloatSize&) override;
 
+    void placeLayoutNGRoots();
+
 private:
     void mapLocalToAncestor(const LayoutBoxModelObject* ancestor, TransformState&, MapCoordinatesFlags = ApplyContainerFlip, bool* wasFixed = nullptr, const PaintInvalidationState* = nullptr) const override;
 
